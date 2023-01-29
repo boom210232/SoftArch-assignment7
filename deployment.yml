@@ -1,33 +1,31 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: assignment7
 spec:
   selector:
-      pod: hello-world-pod
+      pod: assignment7-pod
   ports:
     - protocol: TCP
       port: 8080       # The port, the service listens on.
       targetPort: 80   # The port, the traffic is sent to on the Pod.
-      nodePort: 30002   # Port accessible outside cluster
   type: LoadBalancer
  
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: assignment7
 spec:
   replicas: 5
   selector:
     matchLabels:
-      pod: hello-world-pod
+      pod: assignment7-pod
   template:
     metadata:
       labels:
-        pod: hello-world-pod
+        pod: assignment7-pod
     spec:
       containers:
         - name: hello-world
-          image: tutum/hello-world
+          image: tutum/boom210232/softarch-assignment:v.1.0.0
