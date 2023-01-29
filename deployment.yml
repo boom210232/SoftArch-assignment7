@@ -28,4 +28,4 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: tutum/boom210232/softarch-assignment:v.1.0.0
+          image: boom210232/softarch-assignment:v.1.0.0
